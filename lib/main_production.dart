@@ -11,7 +11,6 @@ void main() async {
   await Firebase.initializeApp();
   const fatalError = true;
   FlutterError.onError = (errorDetails) {
-    print('error recorded');
     if (fatalError) {
       // If you want to record a "fatal" exception
       FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
@@ -23,7 +22,6 @@ void main() async {
   };
   // Async exceptions
   PlatformDispatcher.instance.onError = (error, stack) {
-    print('async error recorded');
     if (fatalError) {
       // If you want to record a "fatal" exception
       FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);

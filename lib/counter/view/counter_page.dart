@@ -21,7 +21,24 @@ class CounterView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Crashlytics reproduction')),
-      body: const Center(child: CounterText()),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          const Center(child: CounterText()),
+          ElevatedButton(
+            onPressed: () async {
+              throw Exception('Test Crashlytics async');
+            },
+            child: const Text('Test Crashlytics async'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              throw Exception('Test Crashlytics');
+            },
+            child: const Text('Test Crashlytics'),
+          ),
+        ],
+      ),
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.end,
