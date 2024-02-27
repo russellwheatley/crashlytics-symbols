@@ -1,6 +1,6 @@
 ## The Problem
 
-Multi-environment (e.g development, production, etc) setup causes de-obfuscation of stack traces to fail on the Firebase console. It works fine when using default Firebase app configuration.
+When user configures multi-environment (e.g development, production, etc) , it breaks de-obfuscation of stack traces on the Firebase console. It works fine when using default Firebase app configuration. Not sure if this is a result of the `upload-symbols` script on firebase-ios-sdk's FirebaseCrashlytics pod or an issue on Firebase console.  
 
 ## To Reproduce
 
