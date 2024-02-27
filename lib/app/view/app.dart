@@ -1,5 +1,5 @@
 import 'package:crashlytics_symbols/counter/counter.dart';
-import 'package:crashlytics_symbols/l10n/l10n.dart';
+
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -14,8 +14,6 @@ class App extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
       home: const CounterPage(),
     );
   }
