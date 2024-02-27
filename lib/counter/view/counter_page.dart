@@ -27,15 +27,9 @@ class CounterView extends StatelessWidget {
           const Center(child: CounterText()),
           ElevatedButton(
             onPressed: () async {
-              throw Exception('Test Crashlytics async');
+              throw Exception('Test Crashlytics reproduction');
             },
-            child: const Text('Test Crashlytics async'),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              throw Exception('Test Crashlytics');
-            },
-            child: const Text('Test Crashlytics'),
+            child: const Text('Test Crashlytics reproduction'),
           ),
         ],
       ),
